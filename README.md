@@ -199,6 +199,9 @@ Agar biror mamlakat topilmasa:
 }
 ```
 ---
+### Cron job haqida
+Ushbu loyida cron job yozilgan u `src/common/cron/fetch.weather.js` faylida soat 00:00 da ishlaydi har kuni
+---
 ### 4. Xatoliklar
 Umumiy xatoliklar:
 
@@ -245,8 +248,8 @@ curl -X GET "http://localhost:5000/api/weather?countries=Uzbekistan,USA,Russia"
 
 Agar savollar yoki takliflar bo'lsa, quyidagi manzil orqali bog'laning:
 
-- **Email:** [support@example.com](mailto:support@example.com)
-- **Telefon:** [+998 90 123 45 67](tel:+998901234567)
+- **Email:** [baxtiyorbozorov226@gmail.com](mailto:baxtiyorbozorov226@gmail.com)
+- **Telefon:** [+998 93 729 27 77](tel:+998937292777)
 
 
 
