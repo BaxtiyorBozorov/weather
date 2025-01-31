@@ -31,7 +31,7 @@ POST /api/auth/register
 
 ### Muvaffaqiyatli javob:
 
-```
+```json
 {
     "message": "Success",
     "data": "679d0ae8051da4285f2b038a",
