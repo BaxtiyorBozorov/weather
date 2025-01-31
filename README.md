@@ -12,16 +12,42 @@ npm run dev
 
 Foydalanuvchilarni ro'yxatdan o'tkazish uchun API.
 
+### Endpoint:
+
+```
+POST /api/auth/register
+```
 
 ### So'rov formati:
+
 ```json
 {
   "name": "John",
   "surname": "Doe",
-  "username": "johndoe",
-  "password": "password123"
+  "username": "Johndoe",
+  "password": "Password123"
 }
 ```
+
+### Muvaffaqiyatli javob:
+
+```
+{
+    "message": "Success",
+    "data": "679d0ae8051da4285f2b038a",
+    "statusCode": 200,
+    "time": "2025-01-31T17:39:52.539Z"
+}
+```
+
 ---
+
+### Login
+
+Foydalanuvchilarni tizimga kirish uchun API.
+
+### Endpoint:
+
+
 
 
