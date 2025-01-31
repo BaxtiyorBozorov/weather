@@ -23,5 +23,24 @@ Tushunarli bo‘ldimi? Agar yana muammo bo‘lsa, GitHub havolangizni yuboring, 
 
 ## Project Structure
 
+```
+├── src/
+│   ├── common/
+│   │   ├── config.js
+│   │   ├── cron/
+│   │   │   └── fetch.weather.js
+│   │   └── joi.schemas/
+│   │       └── validate.schema.js
+│   ├── handler/
+│   │   └── auth.handler.js
+│   ├── middleware/
+│   │   └── auth.js
+├── .env
+├── .gitignore
+├── package.json
+└── README.md
+```
+
+
 
 
