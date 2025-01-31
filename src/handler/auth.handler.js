@@ -11,6 +11,7 @@ export async function createUserHandler(request , response){
     try {
         const data = request.body
         const user = await userService.findByQuery({username: data.username})
+        console.log(user);
         
         if(user.length){
             return response.status(HttpErrorCodes.BadRequest).json(CommonException.BadRequest("User already exists"))
