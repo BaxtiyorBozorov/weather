@@ -200,7 +200,7 @@ Agar biror mamlakat topilmasa:
 ```
 ---
 ### Cron job haqida
-Ushbu loyida cron job yozilgan u `src/common/cron/fetch.weather.js` faylida soat 00:00 da ishlaydi har kuni
+Ushbu loyida cron job yozilgan u [fetch.weather.js fayliga o'tish](./src/common/cron/fetch.weather.js) faylida soat 00:00 da ishlaydi har kuni
 
 ### 4. Xatoliklar
 Umumiy xatoliklar:
