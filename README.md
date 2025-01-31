@@ -8,4 +8,16 @@ Ushbu dokumentatsiya ob-havo ma'lumotlarini olish va foydalanuvchilarni ro'yxatd
 
 Foydalanuvchilarni ro'yxatdan o'tkazish uchun API.
 
-### Endpoint:
+
+### So'rov formati:
+```json
+{
+  "name": "John",
+  "surname": "Doe",
+  "username": "johndoe",
+  "password": "password123"
+}
+```
+---
+
+
