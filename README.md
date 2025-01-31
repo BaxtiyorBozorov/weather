@@ -22,25 +22,50 @@ POST /api/auth/register
 
 ```json
 {
-  "name": "John",
-  "surname": "Doe",
-  "username": "Johndoe",
-  "password": "Password123"
+    "name":"Ali",
+    "surname":"Vali",
+    "username":"Yo'ldosh",
+    "password":"Yo'ldosh1"
 }
 ```
 
-### Muvaffaqiyatli javob:
+### Succes:
 
 ```json
 {
     "message": "Success",
     "data": "679d0ae8051da4285f2b038a",
-    "statusCode": 200,
+    "statusCode": 201,
     "time": "2025-01-31T17:39:52.539Z"
 }
 ```
+---
+
+### User mavjud bo'lgandagi holati
+
+```json
+{
+    "message": "Conflict",
+    "data": "User already exists",
+    "statusCode": 400,
+    "time": "2025-01-31T17:28:44.888Z"
+}
+```
+
 
 ---
+### Paroldagi kamchiliklar
+```json
+{
+    "error": "Parol kamida 6 ta belgidan iborat bo‘lishi kerak.,Parolda kamida bitta harf va bitta raqam bo‘lishi kerak."
+}
+```
+```json
+{
+ "error": "Parolda kamida bitta harf va bitta raqam bo‘lishi kerak."
+}
+```
+
 
 ### Login
 
@@ -53,25 +78,24 @@ POST /api/auth/login
 ### So'rov formati:
 ```json
 {
-  "username": "johndoe",
-  "password": "password123"
+    "username":"Samandarrr",
+    "password":"Baxa123@"
 }
 ```
 ### Muvaffaqiyatli javob:
 ```json
 {
-  "message": "Login successful",
-  "user": {
-    "name": "John",
-    "surname": "Doe",
-    "username": "johndoe"
-  }
+    "message": "OK",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OWNkYjZiZGVkZTVjY2Y4ZjJjMzlkMSIsInVzZXJuYW1lIjoiU2FtYW5kYXJyIiwiaWF0IjoxNzM4MzQ1NzUxfQ.yyGfH49ml4CAwLaMJVKUUWjPzdfghdpD_ukwOJ24YWk"
 }
 ```
 ### Xatolik javobi:
 ```json
 {
-  "message": "Invalid credentials"
+    "message": "NotFound",
+    "data": "User not found",
+    "statusCode": 404,
+    "time": "2025-01-31T17:49:45.542Z"
 }
 ```
 ---
@@ -89,59 +113,90 @@ countries – Vergul bilan ajratilgan mamlakatlar ro'yxati (masalan: Uzbekistan,
 ### So'rov misoli:
 
 ```
-GET /api/weather?countries=Uzbekistan,USA,Russia
+GET http://localhost:1478/weather/?countries=uzbekistan,pakistan,samarqand
 ```
 ### Muvaffaqiyatli javob:
 ```json
-[
-  {
-    "name": "Tashkent",
-    "country": "Uzbekistan",
-    "lat": 41.317,
-    "lon": 69.25,
-    "temp_c": 8.2,
-    "wind_kph": 8.6,
-    "cloud": 2
-  },
-  {
-    "name": "New York",
-    "country": "USA",
-    "lat": 40.71,
-    "lon": -74.01,
-    "temp_c": 15.0,
-    "wind_kph": 12.3,
-    "cloud": 10
-  },
-  {
-    "name": "Moscow",
-    "country": "Russia",
-    "lat": 55.75,
-    "lon": 37.62,
-    "temp_c": 5.0,
-    "wind_kph": 10.0,
-    "cloud": 5
-  }
-]
+{
+    "message": "Success",
+    "data": [
+        {
+            "name": "Tashkent",
+            "country": "Uzbekistan",
+            "lat": 41.317,
+            "lon": 69.25,
+            "temp_c": 2.1,
+            "temp_color": "#D1F2D3",
+            "wind_kph": 7.9,
+            "wind_color": "#E0F7FA",
+            "cloud": 0,
+            "cloud_color": "#FFF9C4"
+        },
+        {
+            "name": "Islamabad",
+            "country": "Pakistan",
+            "lat": 33.7,
+            "lon": 73.167,
+            "temp_c": 20.2,
+            "temp_color": "#FFCC80",
+            "wind_kph": 3.6,
+            "wind_color": "#E0F7FA",
+            "cloud": 10,
+            "cloud_color": "#FFF9C4"
+        },
+        {
+            "name": "Samarqand",
+            "country": "Uzbekistan",
+            "lat": 39.6542,
+            "lon": 66.9597,
+            "temp_c": 2.1,
+            "temp_color": "#D1F2D3",
+            "wind_kph": 4,
+            "wind_color": "#E0F7FA",
+            "cloud": 75,
+            "cloud_color": "#9E9E9E"
+        }
+    ],
+    "statusCode": 200,
+    "time": "2025-01-30T11:48:27.550Z"
+}
 ```
 ### Xatolik javobi:
 Agar biror mamlakat topilmasa:
 
 ```json
-[
-  {
-    "name": "Tashkent",
-    "country": "Uzbekistan",
-    "lat": 41.317,
-    "lon": 69.25,
-    "temp_c": 8.2,
-    "wind_kph": 8.6,
-    "cloud": 2
-  },
-  {
-    "country": "Wakanda",
-    "error": "Country not found"
-  }
-]
+{
+    "message": "Success",
+    "data": [
+        {
+            "name": "Tashkent",
+            "country": "Uzbekistan",
+            "lat": 41.317,
+            "lon": 69.25,
+            "temp_c": 2.1,
+            "temp_color": "#D1F2D3",
+            "wind_kph": 7.9,
+            "wind_color": "#E0F7FA",
+            "cloud": 0,
+            "cloud_color": "#FFF9C4"
+        },
+        {
+            "country": "baxa",
+            "error": "Country not found"
+        }
+    ],
+    "statusCode": 200,
+    "time": "2025-01-30T11:54:27.823Z"
+}
+```
+### Token mavjud bo'lmagandagi xatolik
+```json
+{
+    "message": "Unauthorized",
+    "data": "Access denied. No token provided.",
+    "statusCode": 401,
+    "time": "2025-01-31T18:04:15.738Z"
+}
 ```
 ---
 ### 4. Xatoliklar
@@ -180,20 +235,18 @@ Ob-havo ma'lumotlari:
 curl -X GET "http://localhost:5000/api/weather?countries=Uzbekistan,USA,Russia"
 ```
 ---
-### 6. Qo'shimcha Ma'lumot
+## 6. Qo'shimcha Ma'lumot
 
-Baza vaqti: UTC+0
+- **Baza vaqti:** UTC+0
+- **Ob-havo ma'lumotlari:** Har kuni soat 00:00 da yangilanadi.
+- **API kaliti:** WeatherAPI dan olingan API kalitidan foydalaniladi.
 
-Ob-havo ma'lumotlari: Har kuni soat 00:00 da yangilanadi.
+## 7. Aloqa
 
-API kaliti: WeatherAPI dan olingan API kalitidan foydalaniladi.
-
-### 7. Aloqa
 Agar savollar yoki takliflar bo'lsa, quyidagi manzil orqali bog'laning:
 
-Email: support@example.com
-
-Telefon: +998 90 123 45 67
+- **Email:** [support@example.com](mailto:support@example.com)
+- **Telefon:** [+998 90 123 45 67](tel:+998901234567)
 
 
 
