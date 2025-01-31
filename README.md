@@ -6,7 +6,7 @@ Bu loyiha WeatherAPI'dan foydalanib, ob-havo ma'lumotlarini oladi.
 ```bash
 npm install
 npm run dev
-
+```
 
 ### **Asosiy tuzatishlar:**
 1. `npm start dev` o‘rniga, **ko‘pchilik loyihalarda `npm run dev` ishlatiladi**. Agar siz `npm start` orqali ishga tushirsangiz, `package.json` faylida `"start": "node index.js"` borligiga ishonch hosil qiling.  
