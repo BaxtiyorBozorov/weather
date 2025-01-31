@@ -10,7 +10,7 @@ npm run dev
 
 ### **Asosiy tuzatishlar:**
 1. `npm start dev` o‘rniga, **ko‘pchilik loyihalarda `npm run dev` ishlatiladi**. Agar siz `npm start` orqali ishga tushirsangiz, `package.json` faylida `"start": "node index.js"` borligiga ishonch hosil qiling.  
-2. **Havola (`[WeatherAPI Rasmiy Sayti](https://www.weatherapi.com/)`) kod blokidan tashqariga chiqarildi**. Shunda u Markdown sifatida to‘g‘ri ko‘rinadi.  
+2. **Havola ([WeatherAPI Rasmiy Sayti](https://www.weatherapi.com/)) kod blokidan tashqariga chiqarildi**. Shunda u Markdown sifatida to‘g‘ri ko‘rinadi.  
 
 ---
 
@@ -21,25 +21,7 @@ npm run dev
 
 Tushunarli bo‘ldimi? Agar yana muammo bo‘lsa, GitHub havolangizni yuboring, to‘liq ko‘rib chiqaman!
 
-## Project Structure
 
-```
-├── src/
-│   ├── common/
-│   │   ├── config.js
-│   │   ├── cron/
-│   │   │   └── fetch.weather.js
-│   │   └── joi.schemas/
-│   │       └── validate.schema.js
-│   ├── handler/
-│   │   └── auth.handler.js
-│   ├── middleware/
-│   │   └── auth.js
-├── .env
-├── .gitignore
-├── package.json
-└── README.md
-```
 
 
 
