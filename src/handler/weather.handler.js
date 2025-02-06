@@ -1,12 +1,16 @@
 
 import { HttpErrorCodes } from "../common/exeption/error.code.js"
 import { CommonException } from "../common/exeption/index.js"
-import { fetchWeatherForMultipleCountries } from "../common/services/weather.service.js"
+import { fetchAllCountries, fetchWeatherForMultipleCountries } from "../common/services/weather.service.js"
 
 
 export async function getWeatherCountries(req , res) {
     const countries = req.query.countries
-    if(!countries) return res.status(HttpErrorCodes.BadRequest).json(CommonException.BadRequest("Countries parameter is required"))
+    if(!countries){
+        const countries = await fetchAllCountries()
+        
+        return res.status(HttpErrorCodes.Success).json(CommonException.Success(countries))
+    }
     const countryList = countries.split(",")
     try {
         const weatherData = await fetchWeatherForMultipleCountries(countryList)

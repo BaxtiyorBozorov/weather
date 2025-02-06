@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ENV } from "../config.js";
 import formatWeatherData from "../utils/formatWeatherData.js";
+import weatherModel from "../db/model/weather.model.js";
 
 const fetchWeatherData = async (country) => {
   try {
@@ -23,4 +24,10 @@ const fetchWeatherForMultipleCountries = async (countries) => {
   return weatherData;
 };
 
-export { fetchWeatherData, fetchWeatherForMultipleCountries };
+
+const fetchAllCountries = async () => {
+  const response  = await weatherModel.find()
+  return response;
+};
+
+export { fetchWeatherData, fetchWeatherForMultipleCountries, fetchAllCountries };
