@@ -30,4 +30,7 @@ const fetchAllCountries = async () => {
   return response;
 };
 
+// const findOneCountry = async(countrey)
+// }
+
 export { fetchWeatherData, fetchWeatherForMultipleCountries, fetchAllCountries };

@@ -4,12 +4,14 @@ import { ENV } from "./common/config.js";
 
 import weatherRoutes from "./router/weather.routes.js"
 
+
 import authRoutes from "./router/auth.routes.js"
 
 import "./common/cron/fetch.weather.js"
 
 const app = express()
 
+// console.log( new Date());
 
 
 async function start() {

@@ -2,7 +2,7 @@ import cron from "node-cron"
 import { fetchWeatherForMultipleCountries } from "../services/weather.service.js";
 import weatherModel from "../db/model/weather.model.js";
 
-cron.schedule("0 0 12 * * *" , async () => {
+cron.schedule("0 0  * * *" , async () => {
     const countries = [
     "afghanistan","albania", "algeria", "andorra", "angola", "argentina", "armenia", "australia", "austria", "azerbaijan", "bahamas","bahrain", "bangladesh", "barbados", "belarus", "belgium", "belize", "benin", 
     "bhutan", "bolivia", "bosnia and herzegovina", "botswana", "brazil", "brunei", "bulgaria", "burkina faso", 
